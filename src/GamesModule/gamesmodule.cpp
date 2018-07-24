@@ -14,6 +14,7 @@ GamesModule::GamesModule()
     m_games_window = new QMainWindow;
 }
 
+#include <QMessageBox>
 QWidget* GamesModule::createWidget( const QString &widgetName )
 {
     if( widgetName.isEmpty() )
@@ -23,9 +24,22 @@ QWidget* GamesModule::createWidget( const QString &widgetName )
 
     if( "LightGame" == widgetName )
     {
-        widget = new QWidget;
+        LightGame *obj = LightGame::getInstance();
+        if( obj )
+        {
+            widget = obj->getWidget();
+        }
     }
 
 
     return widget;
+}
+
+void GamesModule::closeOpenWidget()
+{
+    LightGame *obj = LightGame::getInstance();
+    if( obj )
+    {
+        obj->closeWidget();
+    }
 }

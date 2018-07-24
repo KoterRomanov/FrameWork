@@ -20,7 +20,7 @@ public:
     GamesModule();
 
     QWidget* createWidget( const QString &widgetName );
-
+    void closeOpenWidget();
 
 private:
     QMainWindow *m_games_window;

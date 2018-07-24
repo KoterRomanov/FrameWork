@@ -29,10 +29,17 @@ private:
 
 private:
     void initDock();
+    void initMedia();
 
 
 private slots:
     void slot_ItemDoubleclicked( QTreeWidgetItem *item, int column );
+    void slot_closeOpenWidget(bool);
+
+private:
+    QMenu *m_fileAct;//文件菜单
+    int m_currentWidgetIndex;//当前打开模块的Id
+    QMainWindow *m_centralWidget;
 };
 
 #endif // MAINWINDOW_H

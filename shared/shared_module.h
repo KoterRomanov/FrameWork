@@ -12,6 +12,7 @@ public:
     virtual ~BaseModule(){}
 
     virtual QWidget* createWidget( const QString &widgetName )=0;
+    virtual void closeOpenWidget()=0;
 };
 
 
